@@ -1,0 +1,10 @@
+js file must put public folder (outside the src folder)
+
+<Helmet>
+    <script type="application/javascript" src="./App.js" />
+    <script type="module" src="./App.js" />
+</Helmet>
+
+https://media.gettyimages.com/id/515354418/photo/mustafa-kemal-atat%C3%BCrk-founder-of-the-turkish-republic-with-army-officers-3-6-1923-this-photo.jpg?s=612x612&w=0&k=20&c=NIkEewOibMR4ttX5uVsTaw97DgH24RWDUi4A8hnOmec=
+
+https://media.gettyimages.com/id/515411614/photo/9-11-1926-constantinople-turkey-his-excellency-mustafa-kemal-pasha-head-of-the-turkish.jpg?s=612x612&w=0&k=20&c=L-XLm4HB1CI1wcPjLKkQkhai9px95L2kh9L9pspJZF8=

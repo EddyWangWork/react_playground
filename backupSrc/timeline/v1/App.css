@@ -1,0 +1,34 @@
+@import '../node_modules/@syncfusion/ej2-layouts/styles/material.css';
+
+.e-card .e-card-header {
+  display: block;
+  height: auto;
+  min-height: auto;
+}
+
+.e-card.e-card-horizontal .e-card-stacked {
+  display: block;
+}
+
+.ul2 {
+  padding-top: 0%;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+  line-height: normal;
+  margin-top: auto;
+
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cTPlZP {
+  margin: 0 !important;
+  width: auto !important;
+}
