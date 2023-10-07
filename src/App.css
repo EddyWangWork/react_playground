@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css");
 
 .timeline {
   display: flex;

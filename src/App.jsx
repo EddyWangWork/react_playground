@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Aboutus from '../src/aboutus/Aboutus';
 import Food from '../src/foods/Food';
+import TimelineApp from '../src/timeline/TimelineApp';
 import HorizontalScroll from "react-scroll-horizontal";
 import $ from 'jquery';
 import jQuery from 'jquery';
@@ -28,7 +29,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Aboutus />} />
-        <Route path="home" element={<Food />} />
+        <Route path="home" element={<TimelineApp />} />
       </Routes>
     </BrowserRouter>
   );

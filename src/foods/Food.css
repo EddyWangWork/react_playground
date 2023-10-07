@@ -340,7 +340,7 @@
 
 @media only screen and (max-width: 768px) {
   .stories {
-    margin: 0 0 0.5em 0;
+    margin: 0 0 0 0;
     /*new*/
     bottom: 0px;
   }
