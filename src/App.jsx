@@ -13,6 +13,7 @@ import Food from '../src/foods/Food';
 import TimelineApp from '../src/timeline/TimelineApp';
 import StackedLine from '../src/chart/stackedLine';
 import CardApp from '../src/component/CardApp';
+import TLApp from '../src/timelineNew/TLApp';
 import ProgressButtonApp from '../src/component/ProgressButtonApp';
 import HorizontalScroll from "react-scroll-horizontal";
 import $ from 'jquery';
@@ -32,7 +33,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Aboutus />} />
-        <Route path="home" element={<ProgressButtonApp />} />
+        <Route path="home" element={<TLApp />} />
       </Routes>
     </BrowserRouter>
   );
