@@ -10,3 +10,5 @@ js file must put public folder (outside the src folder)
 $(function() {
     console.log( "ready!" );
 });
+
+npm install @syncfusion/ej2-react-splitbuttons --legacy-peer-deps
