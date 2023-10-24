@@ -10,14 +10,14 @@ import { Helmet } from "react-helmet";
 import HorizontalScroll from "react-scroll-horizontal";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import './TLApp.css';
+import './TLBookApp.css';
 import $ from 'jquery';
 import jQuery from 'jquery';
 window.jQuery = jQuery;
 window.$ = $;
 
 
-function TLApp() {
+function TLBookApp() {
     const [items, setItems] = useState([]);
 
     const navigate = useNavigate();
@@ -50,7 +50,7 @@ function TLApp() {
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> */}
                 <script type="application/javascript" src="./TLApp/TLApp3.js" />
                 <script type="application/javascript" src="./TLApp/TLApp2.js" />
-                <script type="application/javascript" src="./TLApp/TLApp.js" />
+                <script type="application/javascript" src="./TLBook/TLBookApp.js" />
                 {/* <script type="application/javascript" src="./TLApp2.js" /> */}
             </Helmet>
             <section className="cd-horizontal-timeline">
@@ -192,5 +192,5 @@ function TLApp() {
     );
 }
 ;
-export default TLApp;
+export default TLBookApp;
 

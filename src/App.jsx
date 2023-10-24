@@ -13,7 +13,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import TimelineApp from '../src/timeline/TimelineApp';
 // import StackedLine from '../src/chart/stackedLine';
 // import CardApp from '../src/component/CardApp';
-import TLApp from '../src/timelineNew/TLApp';
+// import TLApp from '../src/timelineNew/TLApp';
+import TLBookApp from '../src/timelineBook/TLBookApp';
 // import SwiperApp from '../src/swiper/SwiperApp';
 // import ProgressButtonApp from '../src/component/ProgressButtonApp';
 // import HorizontalScroll from "react-scroll-horizontal";
@@ -33,8 +34,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<TLApp />} />
-        <Route path="home" element={<TLApp />} />
+        <Route path="/" element={<TLBookApp />} />
+        <Route path="home" element={<TLBookApp />} />
       </Routes>
     </BrowserRouter>
   );
