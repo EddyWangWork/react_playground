@@ -35,6 +35,24 @@ jQuery(document).ready(function ($) {
                 event.preventDefault();
                 updateSlide(timelineComponents, timelineTotWidth, 'prev');
             });
+
+            /*Swiper*/
+            const swiper = new Swiper('.swiper', {
+                // ...
+            });
+
+            var isFromTop = false;
+
+            swiper.on('slidePrevTransitionEnd', function (event) {
+                !isFromTop && showNewContent(timelineComponents, timelineTotWidth, 'prev');
+                isFromTop = false;
+            });
+            swiper.on('slideNextTransitionEnd', function (event) {
+                !isFromTop && showNewContent(timelineComponents, timelineTotWidth, 'next');
+                isFromTop = false;
+            });
+            /*END Swiper*/
+
             //detect click on the a single event - show new event content
             timelineComponents['eventsWrapper'].on('click', 'a', function (event) {
                 event.preventDefault();
@@ -43,17 +61,23 @@ jQuery(document).ready(function ($) {
                 updateOlderEvents($(this));
                 updateFilling($(this), timelineComponents['fillingLine'], timelineTotWidth);
                 updateVisibleContent($(this), timelineComponents['eventsContent']);
+
+                var ssss = timelineComponents['timelineEvents'];
+                var activeIndex = ssss.index($(this))
+
+                isFromTop = true;
+                swiper.slideTo(activeIndex);
             });
 
-            //on swipe, show next/prev event content
-            timelineComponents['eventsContent'].on('swipeleft', function () {
-                var mq = checkMQ();
-                (mq == 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'next');
-            });
-            timelineComponents['eventsContent'].on('swiperight', function () {
-                var mq = checkMQ();
-                (mq == 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'prev');
-            });
+            // //on swipe, show next/prev event content
+            // timelineComponents['eventsContent'].on('swipeleft', function () {
+            //     var mq = checkMQ();
+            //     (mq == 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'next');
+            // });
+            // timelineComponents['eventsContent'].on('swiperight', function () {
+            //     var mq = checkMQ();
+            //     (mq == 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'prev');
+            // });
 
             //keyboard navigation
             $(document).keyup(function (event) {
@@ -79,7 +103,8 @@ jQuery(document).ready(function ($) {
     function showNewContent(timelineComponents, timelineTotWidth, string) {
         //go from one event to the next/previous one
         var visibleContent = timelineComponents['eventsContent'].find('.selected'),
-            newContent = (string == 'next') ? visibleContent.next() : visibleContent.prev();
+            // newContent = (string == 'next') ? visibleContent.next() : visibleContent.prev();
+            newContent = (string == 'next') ? visibleContent.prevObject : visibleContent.prevObject;
 
         if (newContent.length > 0) { //if there's a next/prev event - show it
             var selectedDate = timelineComponents['eventsWrapper'].find('.selected'),
