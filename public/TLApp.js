@@ -81,10 +81,17 @@ jQuery(document).ready(function ($) {
 
             //keyboard navigation
             $(document).keyup(function (event) {
+                isFromTop = true;
                 if (event.which == '37' && elementInViewport(timeline.get(0))) {
-                    showNewContent(timelineComponents, timelineTotWidth, 'prev');
+                    if (!swiper.isBeginning) {
+                        showNewContent(timelineComponents, timelineTotWidth, 'prev');
+                        swiper.slideTo(swiper.realIndex - 1);
+                    }
                 } else if (event.which == '39' && elementInViewport(timeline.get(0))) {
-                    showNewContent(timelineComponents, timelineTotWidth, 'next');
+                    if (!swiper.isEnd) {
+                        showNewContent(timelineComponents, timelineTotWidth, 'next');
+                        swiper.slideTo(swiper.realIndex + 1);
+                    }
                 }
             });
         });
