@@ -494,7 +494,7 @@ function Food() {
       <title>CodePen - timeline</title>
       {/* partial:index.partial.html */}
       <Helmet>
-        <script type="application/javascript" src="./food/App.js" />
+        <script type="application/javascript" src="../food/App.js" />
       </Helmet>
       {getScrollNav()}
       {/* {getScroll()} */}

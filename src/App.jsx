@@ -9,19 +9,15 @@ import Moment from 'moment';
 import { Helmet } from "react-helmet";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Aboutus from '../src/aboutus/Aboutus';
-// import Food from '../src/foods/Food';
+import Food from '../src/foods/Food';
 // import TimelineApp from '../src/timeline/TimelineApp';
 // import StackedLine from '../src/chart/stackedLine';
 // import CardApp from '../src/component/CardApp';
-// import TLApp from '../src/timelineNew/TLApp';
+import TLApp from '../src/timelineNew/TLApp';
 import TLBookApp from '../src/timelineBook/TLBookApp';
 // import SwiperApp from '../src/swiper/SwiperApp';
 // import ProgressButtonApp from '../src/component/ProgressButtonApp';
 // import HorizontalScroll from "react-scroll-horizontal";
-import $ from 'jquery';
-import jQuery from 'jquery';
-window.jQuery = jQuery;
-window.$ = $;
 
 
 function App() {
@@ -35,7 +31,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<TLBookApp />} />
-        <Route path="home" element={<TLBookApp />} />
+        <Route path="home" element={<TLApp />} />
+        <Route path="food" element={<Food />} />
       </Routes>
     </BrowserRouter>
   );

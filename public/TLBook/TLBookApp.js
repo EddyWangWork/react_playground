@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
     var timelines = $('.cd-horizontal-timeline'),
-        eventsMinDistance = 60;
+        eventsMinDistance = 30;
 
     (timelines.length > 0) && initTimeline(timelines);
 
@@ -68,16 +68,6 @@ jQuery(document).ready(function ($) {
                 isFromTop = true;
                 swiper.slideTo(activeIndex);
             });
-
-            // //on swipe, show next/prev event content
-            // timelineComponents['eventsContent'].on('swipeleft', function () {
-            //     var mq = checkMQ();
-            //     (mq == 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'next');
-            // });
-            // timelineComponents['eventsContent'].on('swiperight', function () {
-            //     var mq = checkMQ();
-            //     (mq == 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'prev');
-            // });
 
             //keyboard navigation
             $(document).keyup(function (event) {
@@ -163,7 +153,9 @@ jQuery(document).ready(function ($) {
         for (i = 0; i < timelineComponents['timelineDates'].length; i++) {
             var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
                 distanceNorm = Math.round(distance / timelineComponents['eventsMinLapse']) + 2;
-            timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm * min + 'px');
+            // timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm * min + 'px');
+            timelineComponents['timelineEvents'].eq(i).css('left', min + 'px');
+            min += 150;
         }
     }
 
@@ -171,7 +163,7 @@ jQuery(document).ready(function ($) {
         var timeSpan = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][timelineComponents['timelineDates'].length - 1]),
             timeSpanNorm = timeSpan / timelineComponents['eventsMinLapse'],
             timeSpanNorm = Math.round(timeSpanNorm) + 4,
-            totalWidth = timeSpanNorm * width;
+            totalWidth = timeSpanNorm * width * 4;
         timelineComponents['eventsWrapper'].css('width', totalWidth + 'px');
         updateFilling(timelineComponents['timelineEvents'].eq(0), timelineComponents['fillingLine'], totalWidth);
 
