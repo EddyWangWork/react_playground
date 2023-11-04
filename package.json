@@ -10,7 +10,9 @@
     "@syncfusion/ej2": "^19.4.48",
     "@syncfusion/ej2-layouts": "^22.1.37",
     "@syncfusion/ej2-react-charts": "^19.4.54",
+    "@syncfusion/ej2-react-dropdowns": "^19.4.56",
     "@syncfusion/ej2-react-grids": "^19.4.56",
+    "@syncfusion/ej2-react-layouts": "^19.4.52",
     "@syncfusion/ej2-react-notifications": "^19.4.52",
     "@syncfusion/ej2-react-splitbuttons": "^19.4.52",
     "@testing-library/jest-dom": "^5.16.5",
@@ -72,6 +74,9 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.16",
-    "react-router-dom": "^6.16.0"
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "react-router-dom": "^6.16.0",
+    "tailwindcss": "^3.3.5"
   }
 }

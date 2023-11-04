@@ -1,4 +1,4 @@
- --legacy-peer-deps
+--legacy-peer-deps
 
 js file must put public folder (outside the src folder)
 

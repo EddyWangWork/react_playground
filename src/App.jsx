@@ -15,6 +15,8 @@ import Food from '../src/foods/Food';
 // import CardApp from '../src/component/CardApp';
 import TLApp from '../src/timelineNew/TLApp';
 import TLBookApp from '../src/timelineBook/TLBookApp';
+import LbApp from '../src/listbox/LbApp';
+import LayoutApp from '../src/layout/LayoutApp';
 // import SwiperApp from '../src/swiper/SwiperApp';
 // import ProgressButtonApp from '../src/component/ProgressButtonApp';
 // import HorizontalScroll from "react-scroll-horizontal";
@@ -30,9 +32,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<TLBookApp />} />
+        <Route path="/" element={<LayoutApp />} />
         <Route path="home" element={<TLApp />} />
         <Route path="food" element={<Food />} />
+        <Route path="listbox" element={<LbApp />} />
+        <Route path="layout" element={<LayoutApp />} />
       </Routes>
     </BrowserRouter>
   );
