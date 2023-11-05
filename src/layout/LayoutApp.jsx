@@ -25,8 +25,8 @@ function LayoutApp() {
     const [amountA, setamountA] = useState(1);
     const [amountB, setamountB] = useState(1);
 
-    let refA;
-    let refB;
+    let refA = useRef(null);
+    let refB = useRef(null);
 
     const navigate = useNavigate();
 
@@ -35,6 +35,7 @@ function LayoutApp() {
     };
 
     React.useEffect(() => {
+        getAmount();
         $('.e-listbox-tool').on("click", function () {
             getAmount();
         });
@@ -88,8 +89,8 @@ function LayoutApp() {
     /*asddddddddddddddddddddddddddddd*/
 
     const getAmount = () => {
-        var arrayA = dataSource.filter((x) => groupA.some(y => y.Name === x.Name));
-        var arrayB = dataSource.filter((x) => groupB.some(y => y.Name === x.Name));
+        var arrayA = dataSource.filter((x) => refA.current.listData.some(y => y.Name === x.Name));
+        var arrayB = dataSource.filter((x) => refB.current.listData.some(y => y.Name === x.Name));
 
         var totalA = arrayA.reduce((a, v) => a = a + v.Amount, 0)
         var totalB = arrayB.reduce((a, v) => a = a + v.Amount, 0)
@@ -99,22 +100,12 @@ function LayoutApp() {
 
         setcountB(arrayB.length);
         setamountB(totalB);
-
-        console.log('getAmount');
-        console.log(refA);
-        console.log(refA?.listData);
-        console.log(refB?.listData);
-
-        // console.log(countA);
-        // console.log(countB);
-        // console.log(totalA);
-        // console.log(totalB);
     }
 
     const listboxA = () => {
         return (
             <div className="listbox1 pl-10">
-                <ListBoxComponent ref={a => refA = a} height={250} dataSource={groupA} fields={fields} scope="#listbox" toolbarSettings={toolbar} />
+                <ListBoxComponent ref={refA} height={250} dataSource={groupA} fields={fields} scope="#listbox" toolbarSettings={toolbar} />
             </div>
         )
     }
@@ -122,8 +113,7 @@ function LayoutApp() {
     const listboxB = () => {
         return (
             <div className="listbox2 listbox1 pr-10">
-                <ListBoxComponent ref={a => refB = a} height={250} id="listbox" dataSource={groupB} fields={fields} />
-                {/* <ListBoxComponent ref={b => refB = b} actionComplete={() => { getAmount() }} height={250} id="listbox" dataSource={groupB} fields={fields} /> */}
+                <ListBoxComponent ref={refB} height={250} id="listbox" dataSource={groupB} fields={fields} />
             </div>
         )
     }
@@ -219,8 +209,8 @@ function LayoutApp() {
         <div>
             <div class="grid grid-cols-2 gap-6 py-5">
                 <div class="pl-10 col-span-2">{box5()}</div>
-                <div class="...">{listboxA()}</div>
-                <div class="...">{listboxB()}</div>
+                <div>{listboxA()}</div>
+                <div>{listboxB()}</div>
                 <div class="pl-10 pr-24">{box3()}</div>
                 <div class="pr-10">{box4()}</div>
             </div>
