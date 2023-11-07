@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
 
     var selectedImage = $('.swiper-slide li.selected img')
     $('#divImage').css('background-image', `url(${selectedImage[0].currentSrc})`);
+    $('.boxTest').height($(window).height());
 
     (timelines.length > 0) && initTimeline(timelines);
 
@@ -199,6 +200,10 @@ jQuery(document).ready(function ($) {
             selectedContent.removeClass('enter-left enter-right');
         });
         eventsContent.css('height', selectedContentHeight + 'px');
+
+        var totalHeight = selectedContentHeight + eventsContent[0].offsetTop
+        var windowHeight = $(window).height();
+        $('.boxTest').height(totalHeight < windowHeight ? windowHeight : totalHeight);
     }
 
     function updateOlderEvents(event) {
