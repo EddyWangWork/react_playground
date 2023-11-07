@@ -37,6 +37,7 @@ function App() {
         <Route path="food" element={<Food />} />
         <Route path="listbox" element={<LbApp />} />
         <Route path="layout" element={<LayoutApp />} />
+        <Route path="book" element={<TLBookApp />} />
       </Routes>
     </BrowserRouter>
   );

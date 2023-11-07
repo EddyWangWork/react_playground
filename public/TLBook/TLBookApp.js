@@ -2,6 +2,9 @@ jQuery(document).ready(function ($) {
     var timelines = $('.cd-horizontal-timeline'),
         eventsMinDistance = 30;
 
+    var selectedImage = $('.swiper-slide li.selected img')
+    $('#divImage').css('background-image', `url(${selectedImage[0].currentSrc})`);
+
     (timelines.length > 0) && initTimeline(timelines);
 
     function initTimeline(timelines) {
@@ -67,11 +70,15 @@ jQuery(document).ready(function ($) {
 
                 isFromTop = true;
                 swiper.slideTo(activeIndex);
+
+                var selectedImage = $('.swiper-slide li.selected img')
+                $('#divImage').css('background-image', `url(${selectedImage[0].currentSrc})`);
             });
 
             //keyboard navigation
             $(document).keyup(function (event) {
                 isFromTop = true;
+
                 if (event.which == '37' && elementInViewport(timeline.get(0))) {
                     if (!swiper.isBeginning) {
                         showNewContent(timelineComponents, timelineTotWidth, 'prev');
@@ -102,7 +109,6 @@ jQuery(document).ready(function ($) {
         var visibleContent = timelineComponents['eventsContent'].find('.selected'),
             // newContent = (string == 'next') ? visibleContent.next() : visibleContent.prev();
             newContent = (string == 'next') ? visibleContent.prevObject : visibleContent.prevObject;
-
         if (newContent.length > 0) { //if there's a next/prev event - show it
             var selectedDate = timelineComponents['eventsWrapper'].find('.selected'),
                 newEvent = (string == 'next') ? selectedDate.parent('li').next('li').children('a') : selectedDate.parent('li').prev('li').children('a');
@@ -113,6 +119,9 @@ jQuery(document).ready(function ($) {
             selectedDate.removeClass('selected');
             updateOlderEvents(newEvent);
             updateTimelinePosition(string, newEvent, timelineComponents, timelineTotWidth);
+
+            var selectedImage = $('.swiper-slide li.selected img')
+            $('#divImage').css('background-image', `url(${selectedImage[0].currentSrc})`);
         }
     }
 
