@@ -17,6 +17,7 @@ import TLApp from '../src/timelineNew/TLApp';
 import TLBookApp from '../src/timelineBook/TLBookApp';
 import LbApp from '../src/listbox/LbApp';
 import LayoutApp from '../src/layout/LayoutApp';
+import Layout2App from '../src/layout/Layout2App';
 // import SwiperApp from '../src/swiper/SwiperApp';
 // import ProgressButtonApp from '../src/component/ProgressButtonApp';
 // import HorizontalScroll from "react-scroll-horizontal";
@@ -36,7 +37,7 @@ function App() {
         <Route path="home" element={<TLApp />} />
         <Route path="food" element={<Food />} />
         <Route path="listbox" element={<LbApp />} />
-        <Route path="layout" element={<LayoutApp />} />
+        <Route path="layout" element={<Layout2App />} />
         <Route path="book" element={<TLBookApp />} />
       </Routes>
     </BrowserRouter>
