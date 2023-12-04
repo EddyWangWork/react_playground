@@ -5,13 +5,16 @@ import './index.css';
 import './App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from "@material-tailwind/react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     // 
     // <GoogleOAuthProvider clientId="552410376639-cj3bbt5ddh1uqmb5ondesogrqhkf3t87.apps.googleusercontent.com">
     // <React.StrictMode>
-    <App />
+    <ThemeProvider>
+        <App />
+    </ThemeProvider>
     // </React.StrictMode>
     // </GoogleOAuthProvider>
 );

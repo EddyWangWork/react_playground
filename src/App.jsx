@@ -18,7 +18,12 @@ import TLBookApp from '../src/timelineBook/TLBookApp';
 import LbApp from '../src/listbox/LbApp';
 import LayoutApp from '../src/layout/LayoutApp';
 import Layout2App from '../src/layout/Layout2App';
+import Layout3App from '../src/layout/Layout3App';
 import TabApp from '../src/tab/TabApp';
+import ButtonLoaderApp from '../src/component/ButtonLoaderApp';
+import ApexCharts from '../src/apexcharts/ApexCharts';
+import TWTab from '../src/tailwindcss/TWTab';
+import EGToast from '../src/evergreen/EGToast';
 // import SwiperApp from '../src/swiper/SwiperApp';
 // import ProgressButtonApp from '../src/component/ProgressButtonApp';
 // import HorizontalScroll from "react-scroll-horizontal";
@@ -34,13 +39,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LayoutApp />} />
-        <Route path="home" element={<TLApp />} />
+        <Route path="/" element={<ApexCharts />} />
+        {/* <Route path="home" element={<TLApp />} />
         <Route path="food" element={<Food />} />
         <Route path="listbox" element={<LbApp />} />
         <Route path="layout" element={<Layout2App />} />
         <Route path="book" element={<TLBookApp />} />
-        <Route path="tab" element={<TabApp />} />
+        <Route path="tab" element={<TabApp />} /> */}
       </Routes>
     </BrowserRouter>
   );
