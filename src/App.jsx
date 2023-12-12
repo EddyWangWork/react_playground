@@ -26,10 +26,14 @@ import ApexCharts from '../src/apexcharts/ApexCharts';
 // import EGToast from '../src/evergreen/EGToast';
 import NCard from '../src/next/NCard';
 import NTable from '../src/next/NTable';
+import NTable2 from '../src/next/NTable2';
 
-// import ELCard from '../src/elastic/ELCard';
-// import ELTabs from '../src/elastic/ELTabs';
-// import ELStat from '../src/elastic/ELStat';
+import ELCard from '../src/elastic/ELCard';
+import ELTabs from '../src/elastic/ELTabs';
+import ELStat from '../src/elastic/ELStat';
+import ELCombo from '../src/elastic/ELCombo';
+
+import MATable from '../src/material/MATable';
 
 // import MUICard from '../src/mui/MUICard';
 // import SwiperApp from '../src/swiper/SwiperApp';
@@ -46,12 +50,14 @@ function App() {
 
   return (
     <div class="grid grid-cols-1 gap-6 py-5">
-      {/* <div class="pl-10"><NCard /></div>
-      <div class="pl-10"><NTable /></div> */}
-      <div class="pl-10"><ApexCharts /></div>
-      {/* <div class="pl-10"><ELStat /></div>
+      {/* <div class="pl-10"><MATable /></div> */}
+      <div class="pl-10"><ELCombo /></div>
+      {/* <div class="pl-10"><NTable2 /></div>
+      <div class="pl-10"><NTable /></div>
+      <div class="pl-10"><ELStat /></div>
       <div class="pl-10"><ELTabs /></div>
       <div class="pl-10"><ELCard /></div> */}
+      {/* <div class="pl-10"><ApexCharts /></div> */}
     </div>
     // <BrowserRouter>
     //   <Routes>

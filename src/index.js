@@ -11,23 +11,26 @@ import '@elastic/eui/dist/eui_theme_light.css';
 import { EuiProvider, EuiText } from '@elastic/eui';
 import '@fontsource/inter';
 import { CssVarsProvider, useColorScheme } from '@mui/joy/styles';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     // 
     // <GoogleOAuthProvider clientId="552410376639-cj3bbt5ddh1uqmb5ondesogrqhkf3t87.apps.googleusercontent.com">
-    // <React.StrictMode>
+    //<React.StrictMode>
     <ThemeProvider>
         {/* <CssVarsProvider>
-            <EuiProvider>
-               
+            <EuiProvider>               
             </EuiProvider>
         </CssVarsProvider> */}
         {/* <NextUIProvider>
         </NextUIProvider> */}
-        <App />
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <App />
+        </LocalizationProvider>
     </ThemeProvider>
-    // </React.StrictMode>
+    //</React.StrictMode>
     // </GoogleOAuthProvider>
 );
 
