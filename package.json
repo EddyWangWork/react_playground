@@ -44,7 +44,7 @@
     "highlight-words": "^1.2.2",
     "jquery": "^3.7.0",
     "lodash": "^4.17.21",
-    "material-react-table": "^2.0.4",
+    "material-react-table": "^2.0.5",
     "moment": "^2.29.4",
     "prop-types": "^15.8.1",
     "radium": "^0.26.2",

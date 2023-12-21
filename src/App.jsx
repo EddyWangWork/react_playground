@@ -32,8 +32,10 @@ import ELCard from '../src/elastic/ELCard';
 import ELTabs from '../src/elastic/ELTabs';
 import ELStat from '../src/elastic/ELStat';
 import ELCombo from '../src/elastic/ELCombo';
+import ELModal from '../src/elastic/ELModal';
 
 import MATable from '../src/material/MATable';
+import MATable2 from '../src/material/MATable2';
 
 // import MUICard from '../src/mui/MUICard';
 // import SwiperApp from '../src/swiper/SwiperApp';
@@ -50,8 +52,8 @@ function App() {
 
   return (
     <div class="grid grid-cols-1 gap-6 py-5">
-      {/* <div class="pl-10"><MATable /></div> */}
-      <div class="pl-10"><ELCombo /></div>
+      <div class="pl-10"><MATable2 /></div>
+      {/* <div class="pl-10"><ELModal /></div> */}
       {/* <div class="pl-10"><NTable2 /></div>
       <div class="pl-10"><NTable /></div>
       <div class="pl-10"><ELStat /></div>
